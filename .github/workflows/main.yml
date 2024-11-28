@@ -25,6 +25,7 @@ jobs:
       - name: Actualizar repositorio en EC2
         run: |
           ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@${{ matrix.ec2_instance }} "
+          git config --global --add safe.directory /var/www/html &&
           cd /var/www/html &&
           git reset --hard &&
           git pull origin main"
