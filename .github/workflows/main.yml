@@ -12,9 +12,8 @@ jobs:
     strategy:
       matrix:
         ec2_instance: 
-          - ec2-34-236-143-39.compute-1.amazonaws.com
-          - ec2-54-85-104-70.compute-1.amazonaws.com
-          - ec2-54-91-170-168.compute-1.amazonaws.com
+          - ec2-18-206-199-236.compute-1.amazonaws.com
+          - ec2-54-160-150-18.compute-1.amazonaws.com
 
     steps:
       - name: Configurando SSH
@@ -26,7 +25,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@${{ matrix.ec2_instance }} "
           git config --global --add safe.directory /var/www/html &&
-          cd /var/www/html &&
+          cd /mnt/efs/html &&
           git reset --hard &&
           git pull origin main"
 
