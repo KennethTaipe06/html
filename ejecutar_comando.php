@@ -10,8 +10,7 @@ echo "<h1>Host: $hostname</h1>";
     <title>Información del Host</title>
 </head>
 <body>
-    <h2>testeo on main
-        
+    <h2>testeo on main la venganza
     </h2>
 </body>
 </html>
