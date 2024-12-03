@@ -10,6 +10,6 @@ echo "<h1>Host: $hostname</h1>";
     <title>Información del Host</title>
 </head>
 <body>
-    <h2>este es un commit para test2</h2>
+    <h2>esto va ppara test</h2>
 </body>
 </html>
