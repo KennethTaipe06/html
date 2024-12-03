@@ -12,9 +12,9 @@ jobs:
     strategy:
       matrix:
         ec2_instance: 
-          - ec2-54-166-205-168.compute-1.amazonaws.com
-          - ec2-54-90-77-171.compute-1.amazonaws.com
-          - ec2-3-80-39-172.compute-1.amazonaws.com
+          - ec2-34-236-143-39.compute-1.amazonaws.com
+          - ec2-54-85-104-70.compute-1.amazonaws.com
+          - ec2-54-91-170-168.compute-1.amazonaws.com
 
     steps:
       - name: Configurando SSH
