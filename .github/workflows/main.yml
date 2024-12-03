@@ -1,9 +1,9 @@
 name: Actualizar EC2 en commit a main
 
 on:
-  push:
+  pull_request:
     branches:
-      - pull_request
+      - main
 
 jobs:
   update-ec2:
