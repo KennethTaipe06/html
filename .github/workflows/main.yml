@@ -3,7 +3,7 @@ name: Actualizar EC2 en commit a main
 on:
   push:
     branches:
-      - main
+      - pull_request
 
 jobs:
   update-ec2:
