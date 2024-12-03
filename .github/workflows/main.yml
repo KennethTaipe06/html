@@ -21,10 +21,14 @@ jobs:
           echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
           chmod 400 key.pem
 
+      - name: Montar EFS
+        run: |
+          ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@${{ matrix.ec2_instance }} "sudo mount -t efs -o tls fs-0f8d651c11749102c:/ efs"
+
       - name: Actualizar repositorio en EC2
         run: |
           ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@${{ matrix.ec2_instance }} "
-          git config --global --add safe.directory /var/www/html &&
+          git config --global --add safe.directory /mnt/efs/html &&
           cd /mnt/efs/html &&
           git reset --hard &&
           git pull origin main"
